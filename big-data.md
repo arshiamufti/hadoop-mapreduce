@@ -13,7 +13,7 @@ it's awkward to work with using standard statistical software".
 
 ### Aspects of big data
 
-There are 3 V's: volume (refers to the size of the data being dealt with),
+volume (refers to the size of the data being dealt with),
 variety (data often comes in from different sources and in different formats),
 velocity (the fact that data is generated quickly and needs to be processed
 quickly as well).
@@ -44,8 +44,8 @@ without dropping any.
 
 Consists of a way to store data (HDFS) and process it (MapReduce). Data is
 split up and stored in a collection of machines (called a cluster). Then, when
-we want to **process** the dtaa, we process it from the location its
-actually stored (rather than retrive it from a central server). More
+we want to **process** the dtaa, we process it from the location it's
+actually stored in (rather than retrive it from a central server). More
 machines can be added to the cluster as the amount of data grows.
 
 ### Hadoop Ecosystem
