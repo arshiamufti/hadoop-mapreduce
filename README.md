@@ -1,4 +1,4 @@
-# learning-hadoop-mapreduce
+# hadoop-mapreduce
 
 i'm learning a thing
 
