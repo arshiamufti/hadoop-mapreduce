@@ -46,3 +46,7 @@ int getPartition(K key, V value, int numPartitions);
 
 - There is a default Paritioner implementation, `HashPartitioner`. For randomly distributed data, it creates paritions of roughly equal size. If the data's skewed, it probably won't produce a good set of partitions. For example, if 80% of your eys are 0 and the rest are uniformly distributed among 1...9, and you have 2 reducers, you probably don't want to assign reducer #1 the keys 0...4 and reducer #2 the keys 5...9 since work is split unevenly among reducers. A better distribution would be assigning reducer #1 the key 0 and reducer #2 the rest of the keys.
 - You can write your own *Partitioner* implementation, tailored to the data you are aggregating in your MapReduce or Spark job.
+
+### Daemons
+
+There are a set of daemons running on each machine in the cluster. When a MapReduce job is written, it's submitted to a **job tracker** which splits the work into mappers and reducers. These mappers and reducers then run on the cluster nodes. Running the actual map and reduce tasks is handled by the **task tracker** (another daemon). The task tracker runs on each data node. The Hadoop framework then makes the mappers work only on the data of their machine which will reduce network traffic since the mappers run independently of each other. In some cases, the task tracker on a machine might be too busy to process data, in which case, an idle machine processes it (so data would have to be streamed over a network to the idle machine)--this rarely happens.
