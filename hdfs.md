@@ -73,7 +73,8 @@ Wisdom taken from [yahoo dot com](https://developer.yahoo.com/hadoop/tutorial/mo
 
 ```java
 // input: a key, a value and the # of partitions to split the data across
-// output: a number in the range [0, numPartitions] indicating which partition to send the key and the value to
+// output: a number in the range [0, numPartitions] indicating which partition to
+// send the key and the value to
 // for keys k1 and k2, k1 == k2 => getPartition(k1, _, n) = getPartition(k2, _, n)
 int getPartition(K key, V value, int numPartitions);
 ```
