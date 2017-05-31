@@ -29,6 +29,7 @@ Commands that interact with hdfs start with `hadoop fs`
 - `hadoop fs -ls` - list of files in the current directory on the hadoop cluster
 - `hadoop fs -put file.txt` - takes a local file and places it into hdfs and
   give it the same file name`
+- `hadoop fs -get foo/bar.txt bar1.txt` - takes the file bar.txt from hdfs and places it on the local file system at bar1.txt
 - `hadoop fs -tail foo.txt` - unix `tail` but for a file in the hadoop fs
 - `hadoop fs -v foo.txt newfoo.txt`
 - `hadoop fs -rm newfoo.txt`
